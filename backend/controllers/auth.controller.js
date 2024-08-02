@@ -8,9 +8,9 @@ export const signup = async (req, res) => {
 }
 
 export const login = (req, res) => {
-    console.log("login User");
+    console.log("[+] login User");
 }
 
 export const logout = (req, res) => {
-    console.log("signup User");
+    console.log("[+] signup User");
 }
