@@ -1,4 +1,2 @@
-1- BackEnd Packages ( @chat-app-mern (MASTER_DIRECTORY) ):
-
-    $npm install nodemon --save-dev
-        (--save-dev means this is only a dev dependency)
+Install Postman API testing GUI software
+Install Mongodb 
