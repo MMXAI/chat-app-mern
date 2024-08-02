@@ -1,0 +1,18 @@
+1- FrontEnd Setup:
+            $cd frontend 
+            $npm create vite@latest .
+                (React -> JavaScript)
+            $npm i  
+                (i=install)
+            $npm run dev
+            $npm run dev -- --host
+                (hosting your app in your local network)
+
+
+2- BackEnd Setup:
+            $cd TO-chat-app-mern-DIRECTORY
+                (For better dev experience.
+                Enables us to run both the
+                backend and frontend from the
+                main folder)
+            $npm init -y
