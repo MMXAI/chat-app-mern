@@ -1,13 +1,4 @@
 1- BackEnd Packages ( @chat-app-mern (MASTER_DIRECTORY) ):
 
-    $npm install express dotenv cookie-parser bcryptjs mongoose socket.io jsonwebtoken
-        (
-            express:            web server
-            dotenv:             read environment variables
-            cookie-parser:      parsing cookies
-            bcryptjs:           hashing passwords
-            mongoose:           connecting to and interacting with database
-            socket.io:          realtime communication
-            jsonwebtokens:      creating tokens
-        )
-        
+    $npm install nodemon --save-dev
+        (--save-dev means this is only a dev dependency)
