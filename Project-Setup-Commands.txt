@@ -1,18 +1,13 @@
-1- FrontEnd Setup:
-            $cd frontend 
-            $npm create vite@latest .
-                (React -> JavaScript)
-            $npm i  
-                (i=install)
-            $npm run dev
-            $npm run dev -- --host
-                (hosting your app in your local network)
+1- BackEnd Packages ( @chat-app-mern (MASTER_DIRECTORY) ):
 
-
-2- BackEnd Setup:
-            $cd TO-chat-app-mern-DIRECTORY
-                (For better dev experience.
-                Enables us to run both the
-                backend and frontend from the
-                main folder)
-            $npm init -y
+    $npm install express dotenv cookie-parser bcryptjs mongoose socket.io jsonwebtoken
+        (
+            express:            web server
+            dotenv:             read environment variables
+            cookie-parser:      parsing cookies
+            bcryptjs:           hashing passwords
+            mongoose:           connecting to and interacting with database
+            socket.io:          realtime communication
+            jsonwebtokens:      creating tokens
+        )
+        
