@@ -1,3 +1,4 @@
+import bcrypt from "bcryptjs";
 import User from '../models/user.model.js';
 
 export const signup = async (req, res) => {
@@ -15,6 +16,8 @@ export const signup = async (req, res) => {
         }
 
         // HASH PASSWORD HERE
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
 
         // https://avatar.iran.liara.run/public/boy?username
 
@@ -24,19 +27,23 @@ export const signup = async (req, res) => {
         const newUser = new User({
             fullName,   // means fullName:fullName but for simplicity use only fullName
             username,
-            password,
+            password: hashedPassword,
             gender,
             profilePic: gender === "male" ? boyProfilePic : girlProfilePic
         });
 
-        await newUser.save();   // save new user to mongo database
+        if (newUser) {
+            await newUser.save();   // save new user to mongo database
 
-        res.status(201).json({
-            _id: newUser._id,
-            fullName: newUser.fullName,
-            username: newUser.username,
-            profilePic: newUser.profilePic
-        });
+            res.status(201).json({
+                _id: newUser._id,
+                fullName: newUser.fullName,
+                username: newUser.username,
+                profilePic: newUser.profilePic
+            });
+        } else {
+            res.status(400).json({error:"Invalid user data"});
+        }
 
     } catch (error) {
         console.log("Error in signup controller", error.message);
