@@ -1,2 +1,3 @@
-Install Postman API testing GUI software
-Install Mongodb 
+To generate JWT Secret:
+    @Git Bash: $ openssl rand -base64 32
+    
