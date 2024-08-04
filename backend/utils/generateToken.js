@@ -1,5 +1,10 @@
 import jwt from "jsonwebtoken";
 
+/**
+ * This is a sample comment for vscode tooltip
+ * @param {String} userId 
+ * @param {Object} res 
+ */
 const generateTokenAndSetCookie = (userId, res) => {
     // creating token from payload (payload=userId),
     // we also need a digital signature which is
