@@ -1,3 +1,18 @@
-To generate JWT Secret:
-    @Git Bash: $ openssl rand -base64 32
-    
+#### Setting Up ESLint & Prettier:
+
+1. settings.json (files.saveConflictResolution)
+
+2. Install Run on Save Extension
+
+3. Install ESLint & Prettier Extensions
+
+4. npm i -D eslint
+   npx eslint --init
+   define your rules at eslint.config.js
+   Now it will only highlight issues in js files(no fix)
+   To fix: npx eslint --fix YOUR_FILE_NAME
+   Add this to Run on Save (settings.json)
+
+5. npm i -D --save-exact prettier
+   npx prettier --write YOUR_FILE_NAME
+   Add this to Run on Save (settings.json)

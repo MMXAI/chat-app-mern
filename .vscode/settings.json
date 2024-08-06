@@ -1,0 +1,24 @@
+{
+  "files.saveConflictResolution": "overwriteFileOnDisk",
+  "emeraldwalk.runonsave": {
+    "autoClearConsole": true,
+    "commands": [
+      {
+        "match": "\\.js$",
+        "cmd": "npx eslint --fix ${file} & npx prettier --write ${file}"
+      },
+      {
+        "match": "\\.json$",
+        "cmd": "npx eslint --fix ${file} & npx prettier --write ${file}"
+      },
+      {
+        "match": "\\.html$",
+        "cmd": "npx eslint --fix ${file} & npx prettier --write ${file}"
+      },
+      {
+        "match": "\\.css$",
+        "cmd": "npx eslint --fix ${file} & npx prettier --write ${file}"
+      }
+    ]
+  }
+}
