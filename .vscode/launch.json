@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "VSCode Debugger",
+      "program": "${workspaceFolder}/backend/server.js", //App entry point
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**"
+      ],
+      "type": "node"
+    }
+  ]
+}

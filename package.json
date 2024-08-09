@@ -4,7 +4,8 @@
   "description": "RealTime Chat Application Using MERN Stack",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon backend/server.js"
+    "server": "nodemon backend/server.js",
+    "debug": "nodemon --inspect backend/server.js"
   },
   "type": "module",
   "keywords": [],
