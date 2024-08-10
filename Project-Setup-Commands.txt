@@ -25,3 +25,52 @@
 - (Debug Client) Chrome Dev Tools
 - (Debug Client) Set breakpoints/logpoints 
 
+## React Apps (Frontend):
+
+*** Note: Install these Google Chrome Extensions
+***       "React Dev Tools" & "Redux Dev Tools"
+
+### Google Chrome Debugger
+### (Simply run your React app "npm run start" then in your Google Chrome
+###  Browser Dev Tools [Ctrl + Shift + I] Debug your app)
+- npm run start
+- Google Chrome Dev Tools (Ctrl + Shift + I)
+
+### VSCode Hooked To Google Chrome
+- npm run start
+- Setup launch.json (must use URL & PORT given by the above npm command)
+- Press F5 to start debugging
+
+*** Note: React Apps Debugging Techniques:
+*** (These techniques are to avoid rabbit holes
+*** of infinite calls to external codes that 
+*** launch.json "skipFiles" is not able to skip)
+*** Consider this react component:
+***  👌function App() {
+***    const [😎count, setCount] = useState(0)
+***    👍console.log("🚀 ~ App ~ count:", count)
+       ...
+       ✌️return (<> ... 🍟</>)
+***    ...}
+*** In General, Minimum rabit hole Debugging Steps are:
+*** 1. Step Over at 👌&👍&✌️
+*** 2. Step Out (multiple times) at 🍟 
+*** Now considering the above explanation,
+*** if we want to:
+*** 1. Step Into the hook handlers (here setCount) then 
+*** only need to put breakpoint at👌
+*** 2. Use 😎count for "Conditional Breakpoints" then
+*** put the conditional breakpoint at👍
+
+## Vanilla Javascript, HTML, & CSS
+
+*** Note: Install the below VSCode Extension
+***       "Live Server"
+
+### VSCode + Live Server
+### (note that launch.json config here is pretty much the same
+###  as the config used in Debugging Frontend i.e.
+###  "React App: VSCode Hooked To Google Chrome")
+- Start Live Server
+- Setup launch.json (must use URL & PORT given by the Live Server)
+- Press F5 to start debugging

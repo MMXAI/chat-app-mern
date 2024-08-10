@@ -10,6 +10,17 @@
         "${workspaceFolder}/node_modules/**"
       ],
       "type": "node"
+    },
+    { 
+      "name": "VSCode Hooked To Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/frontend/node_modules/**",                
+      ]      
     }
   ]
 }
