@@ -11,7 +11,7 @@
       ],
       "type": "node"
     },
-    { 
+    {
       "name": "VSCode Hooked To Chrome",
       "type": "chrome",
       "request": "launch",
@@ -19,8 +19,8 @@
       "webRoot": "${workspaceFolder}/frontend",
       "skipFiles": [
         "<node_internals>/**",
-        "${workspaceFolder}/frontend/node_modules/**",                
-      ]      
+        "${workspaceFolder}/frontend/node_modules/**"
+      ]
     }
   ]
 }

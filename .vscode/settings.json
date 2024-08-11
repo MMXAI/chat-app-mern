@@ -8,6 +8,14 @@
         "cmd": "npx eslint --fix ${file} & npx prettier --write ${file}"
       },
       {
+        "match": "\\.jsx$",
+        "cmd": "npx eslint --fix ${file} & npx prettier --write ${file}"
+      },
+      {
+        "match": "\\.cjs$",
+        "cmd": "npx eslint --fix ${file} & npx prettier --write ${file}"
+      },
+      {
         "match": "\\.json$",
         "cmd": "npx eslint --fix ${file} & npx prettier --write ${file}"
       },

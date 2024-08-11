@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 dotenv.config();
 
-app.use(express.json());    // to parse the incoming requets with JSON payloads (from req.body)
+app.use(express.json()); // to parse the incoming requets with JSON payloads (from req.body)
 
 app.use("/api/auth", authRoutes);
 
@@ -19,8 +19,7 @@ app.use("/api/auth", authRoutes);
 //     res.send("[+] Server is Up and Running");
 // });
 
-
 app.listen(PORT, () => {
-    connectToMongoDB();
-    console.log(`[+] Server Running on port ${PORT}`);
+  connectToMongoDB();
+  console.log(`[+] Server Running on port ${PORT}`);
 });
