@@ -1,0 +1,24 @@
+{
+  "source": {
+    "include": ["./backend/"],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(node_modules/|docs)"
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true
+  },
+  "opts": {
+    "template": "./node_modules/docdash/",
+    "recurse": true,
+    "destination": "./backend/docs/",
+    "tutorials": "./backend/jsdoc-example/jsdoc-tutorial/",
+    "readme": "./backend/jsdoc-example/readme.md"
+  },
+  "docdash": {
+    "sort": true,
+    "search": true,
+    "collapse": false
+  }
+}

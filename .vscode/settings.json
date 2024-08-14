@@ -1,4 +1,6 @@
 {
+  "js/ts.implicitProjectConfig.checkJs": true,
+
   "files.saveConflictResolution": "overwriteFileOnDisk",
   "emeraldwalk.runonsave": {
     "autoClearConsole": true,

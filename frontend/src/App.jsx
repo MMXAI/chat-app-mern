@@ -3,6 +3,13 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
+/**
+ * This is the main App component that shows vite and react
+ * logos and a counter button
+ *
+ * @namespace MainApp
+ * @returns {React.JSX}
+ */
 function App() {
   const [count, setCount] = useState(0);
 

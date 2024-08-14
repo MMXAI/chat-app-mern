@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon backend/server.js",
-    "debug": "nodemon --inspect backend/server.js"
+    "debug": "nodemon --inspect backend/server.js",
+    "doc": "jsdoc -c jsdoc.json"
   },
   "type": "module",
   "keywords": [],
@@ -22,8 +23,10 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
+    "docdash": "^2.0.2",
     "eslint": "^9.8.0",
     "globals": "^15.9.0",
+    "jsdoc": "^4.0.3",
     "nodemon": "^3.1.4",
     "prettier": "3.3.3"
   }

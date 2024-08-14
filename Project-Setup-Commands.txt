@@ -1,76 +1,49 @@
-# Debugging Setup:
+# Code Documentation Setup Using "jsdoc":
 
-## Nodejs Apps (Backend):
+## Install VSCode Extension "JSDoc Generator"
 
-### VSCode Debugger
-### (Internal: 
-###  Debug Server -> VSCode, Debug Client -> VSCode.
-###  VSCode runs "node --inspect" under the hood which
-###  means that Nodejs opens the debugging port for 3rd
-###  party debug clients to connect. Then VSCode itself 
-###  will connect to that as a debug client)
-- (Debug Client) Set your breakpoints/logpoints anywhere in any file you want
-- (Debug Server) Setup launch.json 
-- (Debug Server) Anywhere, Press F5 to Start Debugging
+## Use this syntax for jsdoc Documentation
+    /**
+    * This is a jsdoc comment
+    */
 
-### Google Chrome Debugger
-### (External:
-###  Debug Server -> bash/VSCode/cmd/..., Debug Client -> Chrome.
-###  At any CLI, enter "node --inspect fileName.js" or use
-###  nodemon for hot reload of edited files "nodemon --inspect fileName.js".
-###  Then open Google Chrome > Dev Tools(Ctrl + Shift + I) > Green Nodejs
-###  icon at top left > Now your Chrome debug client window opens
-- (Optional) Setup package.json
-- (Debug Server) npm run debug
-- (Debug Client) Chrome Dev Tools
-- (Debug Client) Set breakpoints/logpoints 
+    Look at backend/jsdoc-example/
+    This folder illustrates how to put jsdoc comments
+    on your javascript project codebase.
+    Also it shows how to setup a hand-crafted tutorial
+    about your project.
 
-## React Apps (Frontend):
+    Also look at frontend/src/App.jsx
+    This is an example of putting jsdoc comments on
+    React components (which are infact js functions)
 
-*** Note: Install these Google Chrome Extensions
-***       "React Dev Tools" & "Redux Dev Tools"
+## Note that we have two "package.json" files.
+   chat-app-mern/package.json:
+        This is for backend package management.
+   chat-app-mern/frontend/package.json:
+        This one is for frontend package management.
+   So infact our mega project (fullstack chat-app-mern) 
+   consists of two separate & independent projects 
+   (frontend & backend).
+   So for better control on documentation, it is recommended
+   to setup jsdoc for frontend project and backend project
+   independently, as is done here.
 
-### Google Chrome Debugger
-### (Simply run your React app "npm run start" then in your Google Chrome
-###  Browser Dev Tools [Ctrl + Shift + I] Debug your app)
-- npm run start
-- Google Chrome Dev Tools (Ctrl + Shift + I)
+## Backend Documentation (chat-app-mern/):
+1. npm i -D jsdoc
+2. Setup your config in jsdoc.json
+3. (optional) add jsdoc command to package.json
+4. npm run doc 
+    (your docs are generated)
 
-### VSCode Hooked To Google Chrome
-- npm run start
-- Setup launch.json (must use URL & PORT given by the above npm command)
-- Press F5 to start debugging
+## Frontend Documentation (chat-app-mern/frontend/):
+1. cd into frontend folder (chat-app-mern/frontend/)
+2. Do all the steps as you did in "Backend Documentation"
+    (Attention: jsdoc.json is a bit different here!)
 
-*** Note: React Apps Debugging Techniques:
-*** (These techniques are to avoid rabbit holes
-*** of infinite calls to external codes that 
-*** launch.json "skipFiles" is not able to skip)
-*** Consider this react component:
-***  👌function App() {
-***    const [😎count, setCount] = useState(0)
-***    👍console.log("🚀 ~ App ~ count:", count)
-       ...
-       ✌️return (<> ... 🍟</>)
-***    ...}
-*** In General, Minimum rabit hole Debugging Steps are:
-*** 1. Step Over at 👌&👍&✌️
-*** 2. Step Out (multiple times) at 🍟 
-*** Now considering the above explanation,
-*** if we want to:
-*** 1. Step Into the hook handlers (here setCount) then 
-*** only need to put breakpoint at👌
-*** 2. Use 😎count for "Conditional Breakpoints" then
-*** put the conditional breakpoint at👍
-
-## Vanilla Javascript, HTML, & CSS
-
-*** Note: Install the below VSCode Extension
-***       "Live Server"
-
-### VSCode + Live Server
-### (note that launch.json config here is pretty much the same
-###  as the config used in Debugging Frontend i.e.
-###  "React App: VSCode Hooked To Google Chrome")
-- Start Live Server
-- Setup launch.json (must use URL & PORT given by the Live Server)
-- Press F5 to start debugging
+## Enabling Options and Customization
+1. Activate "checkJs" to enable type checking (settings.json)
+    (Now your code compliance with your jsdoc 
+     types and definitions is always checked)
+2. npm i -D docdash
+   Then setup your config in "jsdoc.json" to use docdash theme
