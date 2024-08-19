@@ -1,16 +1,5 @@
-# Software Testing:
-    - Unit Testing (Vitest)
-    - End To End (E2E) Testing (Cypress)
+# Setup Logging with Pino:
 
-## Unit Testing (Vitest):
-- npm i -D vitest
-- (optional) npm i -D @vitest/ui
-- Setup the command in package.json
-    (For default mode, set "test": "vitest")
-    (For vitest GUI, set "test": "vitest --ui")
-    (For coverage report, set "vitest --coverage")
-- Setup your vitest.config.ts
-    (Note that reporter: ["html-spa", "text", "json"] works 
-     when you use "vitest --coverage", and it produces a report
-     of your tests in HTML SPA(Single Page Application) format,
-     and also it prints the text to console and produces a json)
+- npm i pino
+- npm i pino-pretty
+- Create logger.js

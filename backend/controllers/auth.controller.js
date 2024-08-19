@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs";
 import User from "../models/user.model.js";
 import generateTokenAndSetCookie from "../utils/generateToken.js";
+import logger from "../utils/logger.js";
 
 export const signup = async (req, res) => {
   try {
@@ -13,6 +14,15 @@ export const signup = async (req, res) => {
     const user = await User.findOne({ username });
 
     if (user) {
+      // Constructing a more verbose object
+      // for better logging report
+      let verboseUser = Object.assign({ issue: "Malicious User" }, user._doc);
+      // Here we use our Custom Level logger
+      // logger.js > customLevels: { catastrophy: 70 }
+      logger.catastrophy(
+        verboseUser,
+        `This user tried to signup more than once!`,
+      );
       return res.status(400).json({ error: "Username already exists" });
     }
 
