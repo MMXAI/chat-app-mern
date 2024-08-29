@@ -16,7 +16,7 @@ const protectRoute = async (req, res, next) => {
     if (!decoded) {
       return res.status(401).json({ error: "Unauthorized - Invalid Token" });
     }
-    // check if such a user exists
+    // check if such a user with this token exists
     //
     // we use decoded.userId because we have defined it before
     // in utils/generateToken.js:
