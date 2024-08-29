@@ -1,34 +1,13 @@
 {
-  "js/ts.implicitProjectConfig.checkJs": true,
-
-  "files.saveConflictResolution": "overwriteFileOnDisk",
-  "emeraldwalk.runonsave": {
-    "autoClearConsole": true,
-    "commands": [
-      {
-        "match": "\\.js$",
-        "cmd": "npx eslint --fix ${file} & npx prettier --write ${file}"
-      },
-      {
-        "match": "\\.jsx$",
-        "cmd": "npx eslint --fix ${file} & npx prettier --write ${file}"
-      },
-      {
-        "match": "\\.cjs$",
-        "cmd": "npx eslint --fix ${file} & npx prettier --write ${file}"
-      },
-      {
-        "match": "\\.json$",
-        "cmd": "npx eslint --fix ${file} & npx prettier --write ${file}"
-      },
-      {
-        "match": "\\.html$",
-        "cmd": "npx eslint --fix ${file} & npx prettier --write ${file}"
-      },
-      {
-        "match": "\\.css$",
-        "cmd": "npx eslint --fix ${file} & npx prettier --write ${file}"
-      }
-    ]
+  // Useful to match JS types with JSDoc user defined types
+  "js/ts.implicitProjectConfig.checkJs": false,
+  // Setting Prettier On Ctrl+S Save
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   }
 }

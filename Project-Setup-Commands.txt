@@ -1,5 +1,0 @@
-# Setup Logging with Pino:
-
-- npm i pino
-- npm i pino-pretty
-- Create logger.js

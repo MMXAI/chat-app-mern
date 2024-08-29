@@ -8,24 +8,8 @@ const prettyTransport = pino.transport({
   target: "pino-pretty",
   options: {
     translateTime: "SYS:dd-mm-yyyy HH:MM:ss",
-    // ** Uncomment the 3 below to log to File with pretty format
-    // destination: "./logs/output.log",
-    // mkdir: true,
-    // colorize: false,
   },
 });
-
-const jsonTransport = pino.transport({
-  // Logs to file with JSON format
-  target: "pino/file",
-  options: {
-    destination: "./logs/output.log",
-    mkdir: true,
-  },
-});
-
-const transport =
-  process.env.NODE_ENV === "development" ? prettyTransport : jsonTransport;
 
 const logger = pino(
   {
@@ -46,7 +30,7 @@ const logger = pino(
       },
     },
   },
-  transport,
+  prettyTransport
 );
 
 export default logger;
