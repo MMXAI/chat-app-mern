@@ -1,15 +1,8 @@
-# Installing Tailwind CSS
+# Install VSCode Extensions:
 
-```bash
-$ npm install -D tailwindcss postcss autoprefixer
-$ npx tailwindcss init -p
-```
-- Set the *tailwind.config.js* as done in here
-- Update your "src/index.css" as done in here
-
-# Installing Daisy UI
-
-```bash
-$ npm i -D daisyui@latest
-```
-- Update *tailwind.config.css* as done in here
+- Tailwind CSS IntelliSense
+- Auto Rename Tag 
+    - (auto rename paired html/xml tags)
+- Color the tag name 
+    - (makes your html tags colorful + Colorful React Components)
+- ES7+ React/Redux/React-Native snippets
