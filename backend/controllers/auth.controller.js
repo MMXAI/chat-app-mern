@@ -16,13 +16,8 @@ export const signup = async (req, res) => {
     if (user) {
       // Constructing a more verbose object
       // for better logging report
-      let verboseUser = Object.assign({ issue: "Malicious User" }, user._doc);
-      // Here we use our Custom Level logger
-      // logger.js > customLevels: { catastrophy: 70 }
-      logger.catastrophy(
-        verboseUser,
-        `This user tried to signup more than once!`,
-      );
+      let verboseUser = Object.assign({ Issue: "Malicious User" }, user._doc);
+      logger.warn(verboseUser, `This user tried to signup more than once!`);
       return res.status(400).json({ error: "Username already exists" });
     }
 
@@ -58,8 +53,8 @@ export const signup = async (req, res) => {
       res.status(400).json({ error: "Invalid user data" });
     }
   } catch (error) {
-    console.log("Error in signup controller", error.message);
-    res.status(500).json({ error: error.message }); //"[-] Internal Server Error"
+    logger.error(error, "Error in signup controller");
+    res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
@@ -69,7 +64,7 @@ export const login = async (req, res) => {
     const user = await User.findOne({ username });
     const isPasswordCorrect = await bcrypt.compare(
       password,
-      user?.password ?? "",
+      user?.password ?? ""
     );
 
     if (!user || !isPasswordCorrect) {
@@ -85,8 +80,8 @@ export const login = async (req, res) => {
       profilePic: user.profilePic,
     });
   } catch (error) {
-    console.log("Error in login controller", error.message);
-    res.status(500).json({ error: error.message }); //"[-] Internal Server Error"
+    logger.error(error, "Error in login controller");
+    res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
@@ -95,7 +90,7 @@ export const logout = (req, res) => {
     res.cookie("jwt", "", { maxAge: 0 });
     res.status(200).json({ message: "Logged out successfully" });
   } catch (error) {
-    console.log("Error in logout controller", error.message);
-    res.status(500).json({ error: error.message }); //"[-] Internal Server Error"
+    logger.error(error, "Error in logout controller");
+    res.status(500).json({ error: "Internal Server Error" });
   }
 };
