@@ -1,10 +1,21 @@
-# Install VSCode Extensions:
+# Connecting Frontend to Backend
 
-- Markdown Preview Mermaid Support
-- Mermaid Markdown Syntax Highlighting
+## Frontend Setup
 
-# Install npm packages:
-- npm i -D @mermaid-js/mermaid-cli
+1. Installing package:
 
-# Run mermaid cli to Convert your Markdown-Mermaid to SVG
-- npx mmdc -i ./backend/Backend-Architecture.md -o ./backend/Backend-Digram.svg
+```bash
+cd frontend
+npm i react-router-dom
+```
+
+2. Using React Router:
+
+- Applying Router to main.jsx
+- Creating Routes at App.jsx
+
+3. Now Test the Router:
+
+- localhost:3000    (means "/")
+- localhost:3000/login
+- localhost:3000/signup
