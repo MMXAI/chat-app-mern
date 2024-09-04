@@ -6,16 +6,16 @@
 
 ```bash
 cd frontend
-npm i react-router-dom
+npm i react-hot-toast
 ```
 
-2. Using React Router:
+<span style="font-family:Verdana; color:orange">
 
-- Applying Router to main.jsx
-- Creating Routes at App.jsx
+**Note**:
+In <ins>**vite.config.json**</ins> we added a "proxy" prop.
+This is only needed in development stage
+to avoid the CORS error. But in production
+because we are in the same domain there is
+no need to do that.
 
-3. Now Test the Router:
-
-- localhost:3000    (means "/")
-- localhost:3000/login
-- localhost:3000/signup
+</span>
