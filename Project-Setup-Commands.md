@@ -1,12 +1,38 @@
-# Connecting Frontend to Backend
+# State Management in Frontend
 
-<span style="font-family:Verdana; color:orange">
+## Zustand
 
-## Hooks:
+```bash
+cd frontend
+npm install zustand
+```
 
-- Hook the frontend to the backend
-- The Connectors
-- The Communicators
-- Backend <-----> [Hooks <--> Frontend]
+## Regular React States V.S. Zustand State Management  
 
-</span>
+
+### React States
+```javascript
+/* React States */
+
+// const [inputs, setInputs] = useState(init_value: Boolean || Object || Array || ...);
+const [selectedConversation, setSelectedConversation] = useState(...);
+const [messages, setMessages] = useState(...);
+
+```
+
+### Zustand States
+```javascript
+/* Zustand States */
+
+import { create } from "zustand";
+
+// const useConversation = create((set) => ({<OUR_GLOBAL_STATE>})); 
+const useConversation = create((set) => ({
+  selectedConversation: null,
+  setSelectedConversation: (selectedConversation) => set({ selectedConversation }),
+  messages:[],
+  setMessages: (messages) => set({messages}),
+}));
+
+export default useConversation;
+```
