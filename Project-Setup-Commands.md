@@ -38,3 +38,9 @@ then any request to any paths other than
 will be interpreted as rendering the
 <span style="color: yellow">frontend/dist/
 <span style="color: orange">index.html</span></span> file.
+
+8. Instructor did not enter NODE_ENV environment variable
+   into host setting fields intentionaly to avoid "vite not found" error.
+
+9. Enter your application public url into SocketContext.jsx
+   exp: https://chat-app-yt.onrender.com
