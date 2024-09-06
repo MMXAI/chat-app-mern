@@ -5,6 +5,8 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon backend/server.js",
+    "start": "node backend/server.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
     "debug": "nodemon --inspect backend/server.js",
     "doc": "jsdoc -c jsdoc.json",
     "test": "vitest --ui"
