@@ -8,10 +8,10 @@ import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
 
 import connectToMongoDB from "./db/connectToMongoDB.js";
+import { app, server } from "./socket/socket.js";
 
 dotenv.config();
 
-const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json()); // to parse the incoming requets with JSON payloads (from req.body)
@@ -27,7 +27,7 @@ app.use("/api/users", userRoutes);
 //     res.send("[+] Server is Up and Running");
 // });
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   connectToMongoDB();
   logger.info(`[+] Server Running on port ${PORT}`);
 });
